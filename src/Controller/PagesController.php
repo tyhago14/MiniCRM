@@ -48,6 +48,9 @@ class PagesController extends AppController
         if (!$path) {
             return $this->redirect('/');
         }
+         if ($path[0] === 'home') {
+            $this->Authorization->skipAuthorization();
+        }  
         if (in_array('..', $path, true) || in_array('.', $path, true)) {
             throw new ForbiddenException();
         }
