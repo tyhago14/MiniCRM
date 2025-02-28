@@ -18,7 +18,6 @@
             <fieldset>
                 <legend><?= __('Add Customer') ?></legend>
                 <?php
-                    echo $this->Form->control('user_id', ['options' => $users]);
                     echo $this->Form->control('name');
                     echo $this->Form->control('email');
                     echo $this->Form->control('phone');

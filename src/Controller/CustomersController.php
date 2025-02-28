@@ -18,11 +18,14 @@ class CustomersController extends AppController
      */
     public function index()
     {
+        $this->Authorization->skipAuthorization();
+        $userId = $this->request->getAttribute('identity')->getIdentifier();
         $this->paginate = [
             'contain' => ['Users'],
+            'conditions' => ['Customers.user_id' => $userId]
         ];
         $customers = $this->paginate($this->Customers);
-
+        
         $this->set(compact('customers'));
     }
 
@@ -38,7 +41,7 @@ class CustomersController extends AppController
         $customer = $this->Customers->get($id, [
             'contain' => ['Users'],
         ]);
-
+        $this->Authorization->authorize($customer);
         $this->set(compact('customer'));
     }
 
@@ -50,8 +53,10 @@ class CustomersController extends AppController
     public function add()
     {
         $customer = $this->Customers->newEmptyEntity();
+        $this->Authorization->authorize($customer);
         if ($this->request->is('post')) {
             $customer = $this->Customers->patchEntity($customer, $this->request->getData());
+            $customer->user_id = $this->request->getAttribute('identity')->getIdentifier();
             if ($this->Customers->save($customer)) {
                 $this->Flash->success(__('The customer has been saved.'));
 
@@ -75,8 +80,11 @@ class CustomersController extends AppController
         $customer = $this->Customers->get($id, [
             'contain' => [],
         ]);
+        $this->Authorization->authorize($customer);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $customer = $this->Customers->patchEntity($customer, $this->request->getData());
+            $customer = $this->Customers->patchEntity($customer, $this->request->getData(),[
+                'accessibleFields' => ['user_id' => false]
+            ]);
             if ($this->Customers->save($customer)) {
                 $this->Flash->success(__('The customer has been saved.'));
 
@@ -99,6 +107,7 @@ class CustomersController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $customer = $this->Customers->get($id);
+        $this->Authorization->authorize($customer);
         if ($this->Customers->delete($customer)) {
             $this->Flash->success(__('The customer has been deleted.'));
         } else {
