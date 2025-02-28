@@ -129,7 +129,7 @@ class UsersController extends AppController
         if ($result && $result->isValid()) {
             // redirect to /articles after login success
             $redirect = $this->request->getQuery('redirect', [
-                'controller' => 'Users',
+                'controller' => 'Customers',
                 'action' => 'index',
             ]);
 
@@ -148,8 +148,8 @@ class UsersController extends AppController
         // regardless of POST or GET, redirect if user is logged in
         if ($result && $result->isValid()) {
             $this->Authentication->logout();
-
-            return $this->redirect(['controller' => 'Users', 'action' => 'login']);
+            //return $this->redirect(['controller' => 'Users', 'action' => 'login']);
+            return $this->redirect('/');
         }
     }
 }
