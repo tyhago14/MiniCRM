@@ -13,8 +13,7 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  * @var \App\View\AppView $this
  */
-
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$identity = $this->request->getAttribute('identity');
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,32 +21,35 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'fonts', 'cake', 'style']) ?>
+    <?= $this->Html->css(['style']) ?> 
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
-<body>
-    <nav class="top-nav">
-        <div class="top-nav-title">
-            <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
+<body class="bg-blue-50">
+    <div class="flex items-center justify-between max-w-[120rem] p-8 mx-auto mb-8">
+        <div class="space-x-4 flex items-center">
+            <a href="<?= $this->Url->build('/') ?>" class="text-[#8680fe] text-3xl font-medium"><span class="text-gray-700 font-medium">Mini</span>CRM</a>
+            <img class="size" src="<?= $this->Url->build('/img/agenda.svg') ?>" alt="logo" style="width:40px;">
         </div>
-        <div class="top-nav-links">
-            <a href="http://localhost:8765/customers">Contacts</a>
-            <a href="http://localhost:8765/users/logout">Logout</a>
+        <div class="space-x-8">
+            <?php if ($identity): ?>
+                <a class="text-gray-500 font-medium text-2xl hover:text-[#87d2f4] transition" href="http://localhost:8765/customers">Customers</a>
+                <a class="text-gray-500 font-medium text-2xl hover:text-[#87d2f4] transition" href="http://localhost:8765/users/logout">Logout</a>
+            <?php else: ?>
+                <a class="text-gray-500 font-medium text-2xl hover:text-[#87d2f4] transition" href="http://localhost:8765/users/login">Login</a>
+                <a class="text-gray-500 font-medium text-2xl hover:text-[#87d2f4] transition" href="http://localhost:8765/users/add">Sign In</a>
+            <?php endif; ?>
         </div>
-    </nav>
+    </div>
     <main class="main">
-        <div class="container">
             <?= $this->Flash->render() ?>
             <?= $this->fetch('content') ?>
-        </div>
     </main>
     <footer>
     </footer>
