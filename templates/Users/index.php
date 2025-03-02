@@ -4,6 +4,8 @@
  * @var iterable<\App\Model\Entity\User> $users
  */
 ?>
+
+<?= $this->Html->css(['normalize.min', 'milligram.min', 'fonts', 'cake', 'style']) ?>
 <div class="users index content">
     <?= $this->Html->link(__('New User'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('Users') ?></h3>

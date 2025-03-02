@@ -47,7 +47,7 @@ $identity = $this->request->getAttribute('identity');
             <?php endif; ?>
         </div>
     </div>
-    <main class="flex items-center justify-center max-w-[110rem] p-12 mx-auto mb-8">
+    <main class="max-w-[110rem] p-12 mx-auto mb-8">
             <?= $this->Flash->render() ?>
             <?= $this->fetch('content') ?>
     </main>

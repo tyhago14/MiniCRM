@@ -5,6 +5,7 @@
  * @var string[]|\Cake\Collection\CollectionInterface $users
  */
 ?>
+<div class="flex items-center justify-center ">
 <div class="flex bg-white shadow-lg rounded-2xl">
     <aside class="bg-[#ffe7de] min-w-[19rem] p-10 overflow-hidden">
         <div class="grid">
@@ -41,4 +42,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>

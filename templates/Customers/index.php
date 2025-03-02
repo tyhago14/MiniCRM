@@ -5,9 +5,10 @@
  */
 
 ?>
+<div class="flex items-center justify-center ">
 <div class="bg-white shadow-lg rounded-2xl p-10">
     <?= $this->Html->link(__('New Customer'), ['action' => 'add'], ['class' => 'bg-[#8680fe] float-right text-white px-6 py-3 rounded-2xl text-lg font-semibold hover:bg-[#87d2f4] transition cursor-pointer']) ?>
-    <h3 class="text-4xl font-medium text-[#8680fe] mb-4"><?= __('Customers') ?></h3>
+    <h3 class="text-4xl font-medium text-[#8680fe] mb-8"><?= __('Customers') ?></h3>
     <div>
         <table>
             <thead>
@@ -17,7 +18,7 @@
                     <th class="px-6 py-3 text-left"><?= $this->Paginator->sort('phone') ?></th>
                     <th class="px-6 py-3 text-left"><?= $this->Paginator->sort('created') ?></th>
                     <th class="px-6 py-3 text-left"><?= $this->Paginator->sort('modified') ?></th>
-                    <th class="px-6 py-3 text-center"><?= __('Actions') ?></th>
+                    <th class="px-6 py-3 text-center bg-[#ffe7de]"><?= __('Actions') ?></th>
                 </tr>
             </thead>
             <tbody>
@@ -28,7 +29,7 @@
                         <td class="px-6 py-4"><?= h($customer->phone) ?></td>
                         <td class="px-6 py-4"><?= h($customer->created) ?></td>
                         <td class="px-6 py-4"><?= h($customer->modified) ?></td>
-                        <td class="px-6 py-4 text-center space-x-2">
+                        <td class="px-6 py-4 text-center space-x-2 bg-[#ffe7de]">
                             <div class="h-5 w-25 flex items-center justify-center gap-x-2.5"> 
                                 <?= $this->Html->link(__('👁️'), ['action' => 'view', $customer->id], ['class' => 'no-underline text-xl hover:text-3xl duration-250']) ?>
                                 <?= $this->Html->link(__('📝'), ['action' => 'edit', $customer->id], ['class' => 'no-underline text-xl hover:text-3xl duration-250']) ?>
@@ -55,4 +56,5 @@
             <?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?>
         </p>
     </div>
+</div>
 </div>

@@ -1,5 +1,6 @@
-<div class="min-w-[50rem] bg-white shadow-lg rounded-2xl p-8">
-    <?= $this->Flash->render() ?>
+<div class="flex items-center justify-center ">
+    <div class="min-w-[50rem] bg-white shadow-lg rounded-2xl p-8">
+        <?= $this->Flash->render() ?>
     <h3 class="text-4xl font-medium text-[#8680fe] mb-4">Login</h3>
     <?= $this->Form->create() ?>
     <fieldset>
@@ -13,5 +14,6 @@
         <?= $this->Form->submit(__('Login 🔓'), ['class' => 'bg-[#8680fe] text-white px-6 py-3 rounded-2xl text-lg font-semibold hover:bg-[#87d2f4] transition cursor-pointer']); ?>
         <?= $this->Form->end(); ?>
     </div>
+</div>
 </div>
 

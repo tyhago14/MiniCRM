@@ -4,8 +4,9 @@
  * @var \App\Model\Entity\User $user
  */
 ?>
-<div class="min-w-[50rem] bg-white shadow-lg rounded-2xl p-8">
-    <h3 class="text-4xl font-medium text-[#8680fe] mb-4">Sign In</h3>
+<div class="flex items-center justify-center ">
+    <div class="min-w-[50rem] bg-white shadow-lg rounded-2xl p-8">
+        <h3 class="text-4xl font-medium text-[#8680fe] mb-4">Sign In</h3>
         <div class="users form content">
             <?= $this->Form->create($user) ?>
             <fieldset>
