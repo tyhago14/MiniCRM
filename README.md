@@ -1,53 +1,66 @@
-# CakePHP Application Skeleton
+# 📌 Customer relationship management
 
-![Build Status](https://github.com/cakephp/app/actions/workflows/ci.yml/badge.svg?branch=master)
-[![Total Downloads](https://img.shields.io/packagist/dt/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)
-[![PHPStan](https://img.shields.io/badge/PHPStan-level%207-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
+This project is a **Customer relationship management** built using **CakePHP** and **TailwindCSS**, with **MySQL** as the database. The system allows users to register, log in, and manage their customers through an intuitive interface.
 
-A skeleton for creating applications with [CakePHP](https://cakephp.org) 4.x.
+---
 
-The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
+## 🚀 Features
 
-## Installation
+ - **User Registration & Login**  
+ - **Add New Customers**  
+ - **List All Customers**  
+ - **Edit & Delete Customers**  
+ - **Secure Authentication System**  
 
-1. Download [Composer](https://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/app [app_name]`.
+---
 
-If Composer is installed globally, run
+## 🛠️ Technologies Used
 
-```bash
-composer create-project --prefer-dist cakephp/app
+- **CakePHP** (PHP Framework)  
+- **TailwindCSS** (Styling)  
+- **MySQL** (Database)  
+- **GitHub** (Version Control)  
+
+---
+
+## 📂 Installation Guide
+
+### 1) Clone the repository  
+```sh
+git clone https://github.com/tyhago14/MiniCRM.git
+cd your-repo
 ```
-
-In case you want to use a custom app dir name (e.g. `/myapp/`):
-
-```bash
-composer create-project --prefer-dist cakephp/app myapp
+### 2) Install dependencies
+```sh
+composer install
+npm install
 ```
+### 3) Configure database
+ - **Create a MySQL database**
+ - **Import the provided SQL file inside SQL_DUMP (cake_crm.sql)**
+ - **Configure config/app.php with your database credentials**
 
-You can now either use your machine's webserver to view the default home page, or start
-up the built-in webserver with:
+---
 
-```bash
-bin/cake server -p 8765
+### 4) Run the application
+```sh
+bin/cake server
 ```
+Open http://localhost:8765 in your browser 🚀
+## The password for users already in the database is **123**
 
-Then visit `http://localhost:8765` to see the welcome page.
+## 📸 Screenshots
 
-## Update
+| Homepage | Login |
+|----------|-------|
+| ![Homepage](screenshots/home.png) | ![Login](screenshots/login.png) |
 
-Since this skeleton is a starting point for your application and various files
-would have been modified as per your needs, there isn't a way to provide
-automated upgrades, so you have to do any updates manually.
+| Customers List | Customers View |
+|--------------|-------------|
+| ![List](screenshots/list.png) | ![View](screenshots/view.png) |
 
-## Configuration
+| Edit Customers | Add Customers |
+|-------------|------------|
+| ![Edit](screenshots/edit.png) | ![Add](screenshots/add.png) |
 
-Read and edit the environment specific `config/app_local.php` and set up the
-`'Datasources'` and any other configuration relevant for your application.
-Other environment agnostic settings can be changed in `config/app.php`.
 
-## Layout
-
-The app skeleton uses [Milligram](https://milligram.io/) (v1.3) minimalist CSS
-framework by default. You can, however, replace it with any other library or
-custom styles.
