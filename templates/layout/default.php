@@ -32,7 +32,7 @@ $identity = $this->request->getAttribute('identity');
     <?= $this->fetch('script') ?>
 </head>
 <body class="bg-blue-50">
-    <div class="flex items-center justify-between max-w-[120rem] p-8 mx-auto mb-8">
+    <div class="flex items-center justify-between max-w-[110rem] p-8 mx-auto mb-8">
         <div class="space-x-4 flex items-center">
             <a href="<?= $this->Url->build('/') ?>" class="text-[#8680fe] text-3xl font-medium"><span class="text-gray-700 font-medium">Mini</span>CRM</a>
             <img class="size" src="<?= $this->Url->build('/img/agenda.svg') ?>" alt="logo" style="width:40px;">
@@ -47,7 +47,7 @@ $identity = $this->request->getAttribute('identity');
             <?php endif; ?>
         </div>
     </div>
-    <main class="main">
+    <main class="flex items-center justify-center max-w-[110rem] p-12 mx-auto mb-8">
             <?= $this->Flash->render() ?>
             <?= $this->fetch('content') ?>
     </main>

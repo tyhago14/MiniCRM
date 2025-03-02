@@ -4,47 +4,39 @@
  * @var \App\Model\Entity\Customer $customer
  */
 ?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('Edit Customer'), ['action' => 'edit', $customer->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Form->postLink(__('Delete Customer'), ['action' => 'delete', $customer->id], ['confirm' => __('Are you sure you want to delete # {0}?', $customer->id), 'class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('List Customers'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('New Customer'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
+<div class="flex bg-white shadow-lg rounded-2xl">
+    <aside class="bg-[#ffe7de] min-w-[19rem] p-10 overflow-hidden">
+        <div class="grid">
+            <h4 class="text-2xl font-medium text-[#8680fe] mb-4"><?= __('Actions') ?></h4>
+            <?= $this->Html->link(__('📝 Edit Customer'), ['action' => 'edit', $customer->id], ['class' => 'py-4 text-xl hover:text-2xl duration-250']) ?>
+            <?= $this->Form->postLink(__('❌ Delete Customer'), ['action' => 'delete', $customer->id], ['confirm' => __('Are you sure you want to delete # {0}?', $customer->id), 'class' => 'py-4 text-xl hover:text-2xl duration-250']) ?>
+            <?= $this->Html->link(__('🔍 List Customers'), ['action' => 'index'], ['class' => 'py-4 text-xl hover:text-2xl duration-250']) ?>
+            <?= $this->Html->link(__('👨‍🦱 New Customer'), ['action' => 'add'], ['class' => 'py-4 text-xl hover:text-2xl duration-250']) ?>
         </div>
     </aside>
-    <div class="column-responsive column-80">
-        <div class="customers view content">
-            <h3><?= h($customer->name) ?></h3>
-            <table>
-                <tr>
-                    <th><?= __('User') ?></th>
-                    <td><?= $customer->has('user') ? $this->Html->link($customer->user->email, ['controller' => 'Users', 'action' => 'view', $customer->user->id]) : '' ?></td>
+    <div class="min-w-2xl p-10">
+        <div class="text-left">
+            <h3 class="text-4xl font-medium text-[#8680fe] mb-4"><?= h($customer->name) ?></h3>
+            <table class="min-w-full">
+                <tr class="border-b">
+                    <th class="py-4 text-xl font-bold"><?= __('Name') ?></th>
+                    <td class="pl-7 text-xl"><?= h($customer->name) ?></td>
                 </tr>
-                <tr>
-                    <th><?= __('Name') ?></th>
-                    <td><?= h($customer->name) ?></td>
+                <tr class="border-b">
+                    <th class="py-4 text-xl font-bold"><?= __('Email') ?></th>
+                    <td class="pl-7 text-xl"><?= h($customer->email) ?></td>
                 </tr>
-                <tr>
-                    <th><?= __('Email') ?></th>
-                    <td><?= h($customer->email) ?></td>
+                <tr class="border-b">
+                    <th class="py-4 text-xl font-bold"><?= __('Phone') ?></th>
+                    <td class="pl-7 text-xl"><?= h($customer->phone) ?></td>
                 </tr>
-                <tr>
-                    <th><?= __('Phone') ?></th>
-                    <td><?= h($customer->phone) ?></td>
+                <tr class="border-b">
+                    <th class="py-4 text-xl font-bold"><?= __('Created') ?></th>
+                    <td class="pl-7 text-xl"><?= h($customer->created) ?></td>
                 </tr>
-                <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= $this->Number->format($customer->id) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Created') ?></th>
-                    <td><?= h($customer->created) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Modified') ?></th>
-                    <td><?= h($customer->modified) ?></td>
+                <tr class="border-b">
+                    <th class="py-4 text-xl font-bold"><?= __('Modified') ?></th>
+                    <td class="pl-7 text-xl"><?= h($customer->modified) ?></td>
                 </tr>
             </table>
         </div>

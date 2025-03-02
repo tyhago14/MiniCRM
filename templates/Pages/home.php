@@ -8,7 +8,6 @@
   <?= $this->Html->css([ 'style']) ?> 
 </head>
 <body>
-  <div class="flex items-center justify-around max-w-[120rem] p-12 mx-auto mb-8">
     <div class="max-w-3xl bg-white shadow-lg rounded-2xl p-8 text-center">
       <h1 class="text-4xl font-medium text-[#8680fe] mb-4">Welcome to Mini CRM</h1>
       <p class="text-gray-700 text-lg mb-6">
@@ -19,10 +18,10 @@
       <div class="bg-[#ffe7de] p-4 rounded-lg mb-6">
         <h2 class="text-xl font-medium text-[#8680fe] mb-2">What You Can Do:</h2>
         <ul class="text-gray-700 text-left space-y-2">
-          <li>✅ <strong>Register & Log In</strong> – Secure authentication to keep your data safe.</li>
-          <li>✅ <strong>Add Contacts</strong> – Easily store new contacts in the database.</li>
-          <li>✅ <strong>View Contact List</strong> – Access all saved contacts in an organized list.</li>
-          <li>✅ <strong>Edit & Delete Contacts</strong> – Update or remove contact details with just a click.</li>
+          <li>📌 <strong>Register & Log In</strong> – Secure authentication to keep your data safe.</li>
+          <li>📌 <strong>Add Contacts</strong> – Easily store new contacts in the database.</li>
+          <li>📌 <strong>View Contact List</strong> – Access all saved contacts in an organized list.</li>
+          <li>📌 <strong>Edit & Delete Contacts</strong> – Update or remove contact details with just a click.</li>
         </ul>
       </div>
 
@@ -34,6 +33,5 @@
     <div>
       <img class="size" src="<?= $this->Url->build('/img/home.png') ?>" alt="home" style="width:40rem;">
     </div>
-  </div>
 </body>
 </html>
